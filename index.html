@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawing App</title>
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h1 class="text-3xl font-bold text-center mb-6">Drawing App</h1>
+        
+        <div class="flex flex-col items-center gap-4">
+          <!-- Tools -->
+          <div class="flex flex-wrap items-center gap-6 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-medium">Colors:</span>
+              <div id="color-picker" class="flex gap-2"></div>
+            </div>
+            
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-medium">Custom Color:</span>
+              <div id="custom-color-picker"></div>
+            </div>
+            
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-medium">Size:</span>
+              <div id="size-picker"></div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-medium">Tools:</span>
+              <div id="tool-picker" class="flex gap-2"></div>
+            </div>
+            
+            <button id="clear-btn" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors">
+              Clear Canvas
+            </button>
+          </div>
+          
+          <!-- Canvas -->
+          <canvas id="canvas" class="bg-white"></canvas>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

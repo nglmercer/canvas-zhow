@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.color-picker {
+  @apply w-8 h-8 rounded-full cursor-pointer border-2 border-gray-300;
+}
+
+.color-picker.active {
+  @apply border-blue-500;
+}
+
+#canvas {
+  @apply border-2 border-gray-300 rounded-lg cursor-crosshair;
+}
