@@ -94,3 +94,115 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.container {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-right: 1px solid #ddd;
+}
+.tool-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tool {
+  width: 40px;
+  height: 40px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+.tool:hover {
+  background-color: #ddd;
+}
+.canvas {
+  width: 800px;
+  height: 450px;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+.color-palette {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-left: 1px solid #ddd;
+}
+.color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+.color:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+.container {
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  border-radius: 0;
+}
+
+.toolbar {
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  border-right: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.tool-group {
+  flex-direction: row;
+}
+
+.canvas {
+  width: 100%;
+  height: 56.25vw; /* Mantiene la proporción 16:9 */
+  max-height: calc(100vh - 120px); /* Ajusta según el espacio disponible */
+}
+
+.color-palette {
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  border-left: none;
+  border-top: 1px solid #ddd;
+}
+
+.tool, .color {
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+}
+}
+
+@media (max-width: 480px) {
+.tool, .color {
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+}
+
+.canvas {
+  max-height: calc(100vh - 100px);
+}
+}   

@@ -16,6 +16,7 @@ export class Toolbox {
     this.createFillToggle();
     this.createUndoRedoButtons();
     this.createClearButton();
+    this.createAlphaSlider();
   }
 
   createColorPickers() {
@@ -67,7 +68,32 @@ export class Toolbox {
     
     sizeContainer.appendChild(sizeInput);
   }
-
+  createAlphaSlider() {
+    const opacitydiv = document.getElementById('opacity-picker')
+    const alphaContainer = document.createElement('div');
+    alphaContainer.className = 'flex flex-row items-center justify-between';
+    
+    const alphaLabel = document.createElement('label');
+    alphaLabel.textContent = 'Opacity';
+    alphaLabel.className = 'text-sm';
+    
+    const alphaInput = document.createElement('input');
+    alphaInput.type = 'range';
+    alphaInput.min = '0';
+    alphaInput.max = '1';
+    alphaInput.step = '0.01';
+    alphaInput.value = '1';
+    alphaInput.className = 'w-32';
+    
+    alphaInput.addEventListener('input', (e) => {
+      this.canvas.setLineOpacity(parseFloat(e.target.value));
+    });
+    
+    alphaContainer.appendChild(alphaLabel);
+    alphaContainer.appendChild(alphaInput);
+    opacitydiv.appendChild(alphaContainer);
+    return alphaContainer;
+  }
   createToolButtons() {
     const toolContainer = document.getElementById('tool-picker');
     
